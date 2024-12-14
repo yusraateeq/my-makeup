@@ -88,8 +88,6 @@
 
 
 
-
-
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
@@ -177,5 +175,10 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
     </main>
   );
 };
+
+// Update PageProps to have `params` as a Promise
+export interface PageProps {
+  params?: Promise<{ id: string }>;
+}
 
 export default ProductPage;
